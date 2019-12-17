@@ -190,7 +190,7 @@ def multimodalgaussian(X_train,Y_train,X_test,Y_test,k):
 path_to_file="/home/saksham/Downloads/SteelPlateFaults-2class"
 data=load_dataset(path_to_file + '.csv')
 PCA(data)
-"""for i in range(1,len(data.columns)):
+for i in range(1,len(data.columns)):
     #reduced_data=dimensionality_reduction(data,i)
     #print(reduced_data)
     #print(len(reduced_data.columns))
@@ -219,34 +219,5 @@ PCA(data)
     print("k with maximum accuracy:",temp)
     plt.plot(range(1,22,2),a)
     plt.show()
-"""   
+   
     
-"""mx=0
-    temp=0
-    i=0
-    a=[]
-    c=[]
-    print("bayes classsifier")
-    data_predict=bayesclassify(reduced_X_train,Y_train.values,reduced_X_test,Y_test.values)
-    print(confusion_matrix(Y_test.values,data_predict))
-    print(accuracy_score(Y_test.values,data_predict))
-    data_predict=multimodalgaussian(reduced_X_train,Y_train.values,reduced_X_test,Y_test.values,1)
-    ##data_predict=(data_predict-data_predict.min())/(data_predict.max()-data_predict.min())
-    #print(data_predict,Y_test.values)
-    print(confusion_matrix(Y_test.values,data_predict))
-    print(accuracy_score(Y_test.values,data_predict))
-    
-    for k in range(2,17,2):
-        data_predict=multimodalgaussian(reduced_X_train,Y_train.values,reduced_X_test,Y_test.values,k)
-        c.append(confusion_matrix(Y_test.values,data_predict))
-        a.append(accuracy_score(Y_test.values,data_predict))
-        if a[i]>mx:
-            temp=k
-            mx=a[i]
-        i+=1
-    print("k with maximum accuracy:",temp)
-    plt.plot(range(2,17,2),a)
-    plt.show()
-    
-    #print("k with maximum accuracy:",temp)
-"""
